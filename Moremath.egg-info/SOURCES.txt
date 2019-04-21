@@ -1,0 +1,8 @@
+README.md
+setup.py
+Moremath.egg-info/PKG-INFO
+Moremath.egg-info/SOURCES.txt
+Moremath.egg-info/dependency_links.txt
+Moremath.egg-info/top_level.txt
+more_math/__init__.py
+more_math/algebra.py
