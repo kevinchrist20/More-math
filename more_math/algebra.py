@@ -34,3 +34,36 @@ class Algebra:
                 diff_n_r = factorial(n - r)
                 permutation = factorial(n) / diff_n_r
                 return permutation
+
+    @staticmethod
+    def convert_denary_to_base(base, number):
+        """ Returns a string representation of the number converted from base 10 (denary) to any base specified"""
+
+        results = ""
+        if base < 0 or number < 0:
+            raise ValueError("Base or number can't be a negative integer")
+        elif base in [0, 1]:
+            raise ValueError("Base can't be below 2")
+        else:
+            base_16 = {10: "A", 11: "B", 12: "C", 13: "D",  14: "E", 15: "F"}
+            if number == 0:
+                return "1"
+            elif number == 1:
+                return "1"
+            else:
+                while number != 0:
+                    if base == 16:
+                        if number in base_16.keys():
+                            results += base_16.get(number)
+                            number //= base
+                        elif (number % base) in base_16.keys():
+                            results += base_16.get(number % base)
+                            number //= base
+                        else:
+                            results += str(number % base)
+                            number //= base
+                    else:
+                        results += str(number % base)
+                        number //= base
+                return results[::-1]
+
